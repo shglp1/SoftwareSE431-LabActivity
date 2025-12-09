@@ -17,7 +17,7 @@ const AddTask = ({ onAdd }) => {
             await onAdd({ text: inputValue });
             setInputValue('');
         } catch (err) {
-            setError("Failed to add task. Please try again.");
+            setError("Failed to add task. Please try again .");
             console.error(err);
         } finally {
             setIsSubmitting(false);
@@ -26,7 +26,7 @@ const AddTask = ({ onAdd }) => {
 
     return (
         <form className="add-task-form" onSubmit={handleSubmit}>
-            <div className="input-group">
+            <div className="input-group ">
                 <input
                     type="text"
                     placeholder="What needs to be done?"

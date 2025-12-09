@@ -11,21 +11,21 @@ function App() {
     loadTasks();
   }, []);
 
+
   const loadTasks = async () => {
     setLoading(true);
     const data = await fetchTasks();
+
     setTasks(data);
     setLoading(false);
   };
 
   const handleAddTask = async (taskData) => {
-    // Optimistic update could go here, but let's wait for server for this lab
     const newTask = await addTask(taskData);
     setTasks((prev) => [...prev, newTask]);
   };
 
   const handleToggleTask = async (id) => {
-    // Optimistic update
     setTasks((prev) =>
       prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
     );

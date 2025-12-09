@@ -6,7 +6,7 @@ let tasks = [
   { id: 3, title: "Review pull requests", completed: false },
 ];
 
-const DELAY = 500; // Simulate network latency
+const DELAY = 500;
 
 export const fetchTasks = () => {
   return new Promise((resolve) => {
