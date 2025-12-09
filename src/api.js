@@ -19,8 +19,6 @@ export const fetchTasks = () => {
 export const addTask = (task) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      // STRICT VALIDATION: This is where the bug will be triggered
-      // The API expects 'title', but the frontend will send 'text'
       if (!task.title) {
         console.error("API Error: Missing 'title' field in request body.", task);
         reject({
@@ -28,6 +26,7 @@ export const addTask = (task) => {
           message: "Bad Request: 'title' field is required.",
         });
         return;
+
       }
 
       const newTask = {

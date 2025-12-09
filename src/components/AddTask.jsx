@@ -12,10 +12,8 @@ const AddTask = ({ onAdd }) => {
         setIsSubmitting(true);
         setError(null);
 
+
         try {
-            // BUG INTRODUCED HERE:
-            // The API expects { title: "..." }
-            // We are sending { text: "..." }
             await onAdd({ text: inputValue });
             setInputValue('');
         } catch (err) {
